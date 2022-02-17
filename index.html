@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/chessboard-1.0.0.min.js"></script>
+    <script src="js/chess.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/0f36d9bd6a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/chessboard-1.0.0.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/chessle.css">
+    <title>Chessle</title>
+    <link rel="icon" type="image/png" href="img/favicon.ico"/>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark navbar-header">
+      <a class="navbar-brand navbar-side" href="https://jackli.gg">
+        jackli.gg
+        <span onclick="location.href='https://www.youtube.com/channel/UC5Mb9-W4AL_2BX0MIn6GeNA'; return false;">
+          <i class="fab fa-youtube"></i>
+        </span>
+      </a>
+      <a class="navbar navbar-title">Chessle</a>
+      <a class="navbar-side"></a>
+    </nav>
+    <div class="container">
+      <div class="modal fade" id="instructionsModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" id="instructionsModalInner" role="document">
+          <div class="modal-content">
+            <div class="modal-header instructions-header">
+              <h5 class="modal-title" id="instructionsModalTitle"></h5>
+            </div>
+            <div class="modal-body row justify-content-center modal-instructions">
+              <p id="instructionsModalBody" class="instructions-text"></p>
+            </div>
+            <div class="row justify-content-center">
+              <button type="button" class="btn btn-primary btn-lg mode-button" onclick="chooseNormalMode()">
+                Normal Mode<br />
+                <p class="mode-desc">(Guess 3 moves for each colour)</p>
+              </button>
+              <button type="button" class="btn btn-primary btn-lg mode-button" onclick="chooseExpertMode()">
+                Expert Mode<br />
+                <p class="mode-desc">(Guess 5 moves for each colour)</p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center align-self-center">
+        <div id="myBoard" class="col-sm-8 lock-screen"></div>
+      </div>
+      <div class="row justify-content-center align-self-center row-buttons">
+        <button type="button" class="btn btn-danger row-button" id="undoButton" onclick='undo()'>Undo Move</button>
+        <button type="button" class="btn btn-info row-button" id="flipButton" onclick='flip()'>Flip Board</button>
+      </div>
+      <div id="prevGuesses"></div>
+      <div class="row justify-content-center align-self-center" id="currentGuess"></div>
+      <div class="row justify-content-center align-self-center row-buttons" id="errorArea">
+      </div>
+      <div class="row justify-content-center align-self-center row-buttons" id="submit">
+        <button class="btn btn-primary row-button" onclick="submitGuess()">Submit</button>
+      </div>
+      <div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" id="shareModalInner" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="shareModalTitle"></h5>
+              <button type="button" class="close close-modal-button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body row justify-content-center">
+              <p id="shareModalBody" class="share-modal-body"></p>
+            </div>
+            <div class="modal-footer">
+              <div id="alertArea"></div>
+              <button type="button" class="btn btn-success btn-lg" onclick="createSharePasta()">Share</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="js/chessle.js"></script>
+</html>
