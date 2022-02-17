@@ -544,7 +544,7 @@ function setUp() {
         userId = localStorage.getItem('userId');
     }
     getAnswer();
-    if (date !== localStorage.getItem('date')) {
+    if ('3' !== localStorage.getItem('date')) {
         localStorage.setItem('prevGuesses', '[]');
         localStorage.setItem('prevResults', '[]');
         localStorage.setItem('isGameOver', false);
