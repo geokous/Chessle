@@ -437,8 +437,8 @@ function openShareModal(text) {
 
 
 function getAnswer() {
-    let game = '1. e4 d5 2. exd5 Qxd5 3. Nc3 Qd6 4. d4 Nf6 5. Nf3 c6 6. Ne5 Nbd7 7. Nc4 Qc7 8. a4 Nd5 9. Bd3 g6 10. Qf3 N7f6 11. Nxd5 Nxd5 12. O-O Bg7 13. c3 O-O 14. Qg3 Qxg3 15. hxg3 Rd8 16. Be2 Be6 17. a5 c5 18. dxc5 Bxc3 19. a6 bxa6 20. Na5 Bxa5 21. Rxa5 Nb4 22. Bf4 Nc6 23. Ra3 a5 24. Bb5 Nd4 25. Ba6 Bc8 26. Bc4 Be6 27. Ba6 Bc8 28. Bc4 Be6'
-    let hardcoded_ans = '{"date": "2022-02-17", "num": 4, "name_normal": "Four Knights Game", "name_expert": "Scandinavian Defense: Gubinsky-Melts Defense"}'
+    let game = '1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6 4. Nxc6 dxc6 5. d3 Bc5 6. Be2 Ng4 7. Bxg4 Qh4 8. O-O Bxg4 9. Qe1 Bd6 10. f4 Bc5+ 11. Kh1 O-O-O 12. Qxh4 Be6 13. f5 Bd7 14. Nc3 f6 15. Bf4 Bb6 16. Na4 g5 17. fxg6 hxg6 18. Qe1 Bd4 19. c3 g5 20. cxd4 gxf4 21. Nc5 Be8 22. Rxf4 Rh6 23. Qf2 b6 24. Ne6 Rd6 25. Rxf6 Rh8 26. Rh6 Rxh6 27. Ng7 Bd7 28. Nf5 Bxf5 29. Qxf5+ Kb7 30. Rc1 Rxd4 31. h3 Rxd3 32. e5 Rd5 33. Qf4 Re6 34. Re1 a5 35. h4 Rd7 36. h5 a4 37. Qxa4 Rh7 38. g4 Rf7 39. Kg2 Rd7 40. Qf4 c5 41. h6 Rd4 42. Qf3+ Ka7 43. g5 Rg6 44. Qf5 Rg8 45. e6 Rd2+ 46. Kg3 Rgd8 47. e7 R8d3+ 48. Qxd3 Rxd3+ 49. Kg4 Rd4+ 50. Kh5 Rd2 51. e8=Q Rh2+ 52. Kg6 c4 53. h7 Kb7 54. Qe4+ Ka6 55. Rd1 c3 56. Rd4 cxb2 57. Ra4+ Kb5 58. Qc4# 1-0'
+    let hardcoded_ans = '{"date": "2022-02-18", "num": 4, "name_normal": "Stafford Gambit Time", "name_expert": "Stafford Gambit Time"}'
     let res = JSON.parse(hardcoded_ans);
     date = res.date;
     chessleNum = res.num;
@@ -544,7 +544,7 @@ function setUp() {
         userId = localStorage.getItem('userId');
     }
     getAnswer();
-    if ('3' !== localStorage.getItem('date')) {
+    if ('2022-02-18' !== localStorage.getItem('date')) {
         localStorage.setItem('prevGuesses', '[]');
         localStorage.setItem('prevResults', '[]');
         localStorage.setItem('isGameOver', false);
