@@ -1,6 +1,6 @@
-const SERVER_URL = 'https://d1vwq1uqg5c4bn.cloudfront.net';
+const SERVER_URL = 'www.google.com';
 
-const MAX_GUESSES = 6;
+const MAX_GUESSES = 10;
 
 const LIGHT_BOX = 'bg-dark';
 const BLACK_BOX = 'text-white bg-secondary';
@@ -422,7 +422,7 @@ function openShareModal(text) {
         ${difficulty === 'e' ? ans_name_expert : ans_name_normal}
         <br />
         <br />
-        This was from https://lichess.org/sDwYRFac
+        This was from Carlsen - Caruana (https://lichess.org/b7D1Xesz#52)
         <br />
         <br />
         I reset this manually when I have time :)
@@ -437,13 +437,13 @@ function openShareModal(text) {
 
 
 function getAnswer() {
-    let game = '1. c4 Nf6 2. Nc3 e5 3. Nf3 Nc6 4. g3 d5 5. cxd5 Nxd5 6. Bg2 Nb6 7. O-O Be7 8. a3 O-O 9. b4 Be6 10. Rb1 f6 11. d3 a5 12. b5 Nd4 13. Nd2 Qc8 14. e3 Nf5 15. Qc2 Rd8 16. Bb2 a4 17. Rfc1 Nd6 18. Nde4 Ne8 19. Qe2 Bf8 20. f4 exf4 21. gxf4 Qd7 22. d4 c6 23. Nc5 Bxc5 24. dxc5 Nc4 25. Rd1 Qc7 26. Bc1 Na5 27. bxc6 bxc6 28. Nxa4 Rxd1+ 29. Qxd1 Rd8 30. Qc2 Qf7 31. Nc3 Qh5 32. Ne2 Bf5 33. e4 Bg4 34. Ng3 Qf7 35. Bf1 Be6 36. Qc3 Ra8 37. Rb4 Qd7 38. f5 Bf7 39. Bf4 Qd1 40. Kf2 Nb3 41. Be2 Qb1 42. Bc4 Rxa3 43. Ne2'
-    let hardcoded_ans = '{"date": "2022-02-16", "num": 4, "name_normal": "Four Knights Game", "name_expert": "English Opening: King\'s English Variation"}'
+    let game = '1. e4 d5 2. exd5 Qxd5 3. Nc3 Qd6 { B01 Scandinavian Defense: Gubinsky-Melts Defense } 4. d4 Nf6 5. Nf3 c6 6. Ne5 Nbd7 7. Nc4 Qc7 8. a4 Nd5 9. Bd3 g6 10. Qf3 N7f6 11. Nxd5 Nxd5 12. O-O Bg7 13. c3 O-O 14. Qg3 Qxg3 15. hxg3 Rd8 16. Be2 Be6 17. a5 c5 18. dxc5 Bxc3 19. a6 bxa6 20. Na5 Bxa5 21. Rxa5 Nb4 22. Bf4 Nc6 23. Ra3 a5 24. Bb5 Nd4 25. Ba6 Bc8 26. Bc4 Be6 27. Ba6 Bc8 28. Bc4 Be6'
+    let hardcoded_ans = '{"date": "2022-02-17", "num": 4, "name_normal": "Four Knights Game", "name_expert": "Scandinavian Defense: Gubinsky-Melts Defense"}'
     let res = JSON.parse(hardcoded_ans);
     date = res.date;
     chessleNum = res.num;
     ans_name_normal = res.name_normal;
-    ans_name_expert = "English Opening: King's English Variation, Four Knights Variation, Fianchetto Line"
+    ans_name_expert = ""
     full_ans = game.replace(/ [0-9]+[.]/g, '').slice(3).split(' ');
 
 }
