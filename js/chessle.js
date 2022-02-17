@@ -422,12 +422,10 @@ function openShareModal(text) {
         ${difficulty === 'e' ? ans_name_expert : ans_name_normal}
         <br />
         <br />
-        Today, ${percentCorrect}% of people got ${DIFFICULTY_NAME_MAP[difficulty]} mode correct.
-        <br />
-        Of the people who got it correct, it took ${avgTries} tries on average.
+        This was from https://lichess.org/sDwYRFac
         <br />
         <br />
-        Chessle resets at 12am PST every day!
+        I reset this manually when I have time :)
         </p>
     `;
     $('#shareModalBody').html(modalBody);
