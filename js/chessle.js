@@ -545,7 +545,7 @@ function setUp() {
     }
     getAnswer();
     console.log('hi')
-    if ('2022-02-18' !== localStorage.getItem('date')) {
+    if ('2022-02-19' !== localStorage.getItem('date')) {
         localStorage.setItem('prevGuesses', '[]');
         localStorage.setItem('prevResults', '[]');
         localStorage.setItem('isGameOver', false);
