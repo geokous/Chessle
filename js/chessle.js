@@ -422,7 +422,7 @@ function openShareModal(text) {
         ${difficulty === 'e' ? ans_name_expert : ans_name_normal}
         <br />
         <br />
-        This was from Carlsen - Caruana (https://lichess.org/b7D1Xesz#52)
+        This was from Grischuk - Caruana (https://lichess.org/U4LSY9eX#20)
         <br />
         <br />
         I reset this manually when I have time :)
