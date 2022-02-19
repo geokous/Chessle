@@ -8,8 +8,8 @@ const YELLOW_BOX = 'text-white bg-warning';
 const GREEN_BOX = 'text-white bg-success';
 
 const DIFFICULTY_NAME_MAP = {
-    'n': 'Normal',
-    'e': 'Expert'
+    'n': 'Msod mode',
+    'e': 'Msod mode'
 };
 
 const RESULT_TO_BOX_MAP = {
@@ -215,7 +215,7 @@ function createSharePasta() {
         + tries
         + '/' + MAX_GUESSES + '\n\n'
         + createEmojiPattern('\n') + '\n'
-        + 'https://jackli.gg/chessle';
+        + 'https://geokous.github.io/';
     let shareData = {
         text: pasta
     };
@@ -437,8 +437,8 @@ function openShareModal(text) {
 
 
 function getAnswer() {
-    let game = '1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6 4. Nxc6 dxc6 5. d3 Bc5 6. Be2 Ng4 7. Bxg4 Qh4 8. O-O Bxg4 9. Qe1 Bd6 10. f4 Bc5+ 11. Kh1 O-O-O 12. Qxh4 Be6 13. f5 Bd7 14. Nc3 f6 15. Bf4 Bb6 16. Na4 g5 17. fxg6 hxg6 18. Qe1 Bd4 19. c3 g5 20. cxd4 gxf4 21. Nc5 Be8 22. Rxf4 Rh6 23. Qf2 b6 24. Ne6 Rd6 25. Rxf6 Rh8 26. Rh6 Rxh6 27. Ng7 Bd7 28. Nf5 Bxf5 29. Qxf5+ Kb7 30. Rc1 Rxd4 31. h3 Rxd3 32. e5 Rd5 33. Qf4 Re6 34. Re1 a5 35. h4 Rd7 36. h5 a4 37. Qxa4 Rh7 38. g4 Rf7 39. Kg2 Rd7 40. Qf4 c5 41. h6 Rd4 42. Qf3+ Ka7 43. g5 Rg6 44. Qf5 Rg8 45. e6 Rd2+ 46. Kg3 Rgd8 47. e7 R8d3+ 48. Qxd3 Rxd3+ 49. Kg4 Rd4+ 50. Kh5 Rd2 51. e8=Q Rh2+ 52. Kg6 c4 53. h7 Kb7 54. Qe4+ Ka6 55. Rd1 c3 56. Rd4 cxb2 57. Ra4+ Kb5 58. Qc4# 1-0'
-    let hardcoded_ans = '{"date": "2022-02-18", "num": 4, "name_normal": "Stafford Gambit Time", "name_expert": "Stafford Gambit Time"}'
+    let game = '1. e4 c6 2. d4 d5 3. e5 Bf5 4. Nc3 e6 5. g4 Bg6 6. Nge2 c5 7. h4 h5 8. Nf4 Bh7 9. Nxh5 Nc6 10. dxc5 Bxc5'
+    let hardcoded_ans = '{"date": "2022-02-19", "num": 6, "name_normal": "Caro-Kann Defense: Advance Variation, Van der Wiel Attack", "name_expert": "Caro-Kann Defense: Advance Variation, Van der Wiel Attack"}'
     let res = JSON.parse(hardcoded_ans);
     date = res.date;
     chessleNum = res.num;
@@ -544,6 +544,7 @@ function setUp() {
         userId = localStorage.getItem('userId');
     }
     getAnswer();
+    console.log('hi')
     if ('2022-02-18' !== localStorage.getItem('date')) {
         localStorage.setItem('prevGuesses', '[]');
         localStorage.setItem('prevResults', '[]');
