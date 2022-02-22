@@ -437,8 +437,8 @@ function openShareModal(text) {
 
 
 function getAnswer() {
-    let game = '1. e4 c6 2. d4 d5 3. e5 Bf5 4. Nc3 e6 5. g4 Bg6 6. Nge2 c5 7. h4 h5 8. Nf4 Bh7 9. Nxh5 Nc6 10. dxc5 Bxc5'
-    let hardcoded_ans = '{"date": "2022-02-19", "num": 6, "name_normal": "Caro-Kann Defense: Advance Variation, Van der Wiel Attack", "name_expert": "Caro-Kann Defense: Advance Variation, Van der Wiel Attack"}'
+    let game = '1. e4 c5 2. Nf3 Nc6 3. c3 Nf6 4. e5 Nd5 5. d4 cxd4 6. cxd4 d6 7. Bc4 Nb6 8. Bb5 dxe5 9. Nxe5 Bd7 10. Nxd7 Qxd7'
+    let hardcoded_ans = '{"date": "2022-02-22", "num": 6, "name_normal": "Sicilian Defense: Old Sicilian"}'
     let res = JSON.parse(hardcoded_ans);
     date = res.date;
     chessleNum = res.num;
@@ -545,7 +545,7 @@ function setUp() {
     }
     getAnswer();
     console.log('hi')
-    if ('2022-02-19' !== localStorage.getItem('date')) {
+    if ('2022-02-22' !== localStorage.getItem('date')) {
         localStorage.setItem('prevGuesses', '[]');
         localStorage.setItem('prevResults', '[]');
         localStorage.setItem('isGameOver', false);
