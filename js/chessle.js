@@ -469,7 +469,7 @@ function openShareModal(text) {
 
 function getAnswer() {
     let game = '1. e4 d6 2. d4 Nf6 3. Nc3 c6 4. f4 Qa5 5. Bd3 e5 6. Nf3 Bg4 7. Be3 Nbd7 8. O-O Be7 9. h3 Bxf3 10. Qxf3 O-O'
-    let hardcoded_ans = '{"date": "2022-02-22", "num": 6, "name": "Sicilian Defense: Old Sicilian"}'
+    let hardcoded_ans = '{"date": "2022-02-22", "num": 6, "name": "Pirc Defense: Czech Defense"}'
     let res = JSON.parse(hardcoded_ans);
     date = TODAY;
     chessleNum = res.num;
