@@ -1,7 +1,9 @@
 // const SERVER_URL_GET = 'https://d1vwq1uqg5c4bn.cloudfront.net/';
-// const SERVER_URL = 'https://d2jwxtulzwxhxh.cloudfront.net/';
+const SERVER_URL = 'www.google.com';
 
-const MAX_GUESSES = 6;
+const MAX_GUESSES = 10;
+const CURR_LENGTH = 20;
+const TODAY = '2022-03-20';
 
 const LIGHT_BOX = 'bg-dark';
 const BLACK_BOX = 'text-white bg-secondary';
@@ -130,7 +132,7 @@ function submitGuess() {
 }
 
 function getAnsLength() {
-    return DIFFICULTY_TO_LENGTH_MAP[difficulty];
+    return CURR_LENGTH;
 }
 
 function updateLocalStorage() {
@@ -235,7 +237,7 @@ function createSharePasta() {
         + tries
         + '/' + MAX_GUESSES + '\n\n'
         + createEmojiPattern('\n') + '\n'
-        + 'https://geokous.github.io';
+        + 'https://jackli.gg/chessle';
     let shareData = {
         text: pasta
     };
@@ -374,6 +376,7 @@ function chooseMode(chosenDifficulty) {
 }
 
 function setUpAnswer() {
+    console.log(fullAns)
     ans = fullAns.slice(0, getAnsLength());
     populateGuessBoxes([]);
     $('#instructionsModal').modal('hide');
@@ -382,7 +385,7 @@ function setUpAnswer() {
 function openInstructionsModal() {
     $('#instructionsModalTitle').text('Welcome to Chessle');
     let instructionsText = `
-        Guess the entire opening sequence, for both white and black!<br />
+        To have come here, you probably know what to do!<br />
         <div class="instructions-example">
             <p class="instructions-example-title">Example</p>
             <img class="instructions-example-img" src="img/example.png">
@@ -443,15 +446,14 @@ function openShareModal(text) {
         <br />
         ${createPgnFromMoveList(ans)}
         <br />
-        ${difficulty === 'e' ? ansNameExpert : ansNameNormal}
+        ${difficulty === 'e' ? ans_name_expert : ans_name_normal}
         <br />
         <br />
-        Learn more about this opening on <a href="${chessableLink}" target="_blank" onclick="logOutboundClick('${chessableLink}');"><b>Chessable</b></a>
-        </p>
-        <p id="share-modal-stats" class="share-modal-answer"></p>
-        <p class="share-modal-answer">
+        This was from Karjakin - Petrosian (https://lichess.org/OdzQZ8xG)
+
         <br />
-        Chessle resets at 12am PST every day!
+        <br />
+        I reset this manually when I have time :)
         </p>
     `;
     $('#shareModalBody').html(modalBody);
@@ -463,16 +465,19 @@ function openShareModal(text) {
 }
 
 
+// HTTP requests
+
 function getAnswer() {
-    let game = '1. e4 c5 2. Nf3 Nc6 3. c3 Nf6 4. e5 Nd5 5. d4 cxd4 6. cxd4 d6 7. Bc4 Nb6 8. Bb5 dxe5 9. Nxe5 Bd7 10. Nxd7 Qxd7'
-    let hardcoded_ans = '{"date": "2022-02-22", "num": 6, "name": "Pirc: Czech Defense"}'
+    let game = '1. e4 d6 2. d4 Nf6 3. Nc3 c6 4. f4 Qa5 5. Bd3 e5 6. Nf3 Bg4 7. Be3 Nbd7 8. O-O Be7 9. h3 Bxf3 10. Qxf3 O-O'
+    let hardcoded_ans = '{"date": "2022-02-22", "num": 6, "name": "Sicilian Defense: Old Sicilian"}'
     let res = JSON.parse(hardcoded_ans);
-    date = res.date;
+    date = TODAY;
     chessleNum = res.num;
     ans_name_normal = res.name;
-    full_ans = game.replace(/ [0-9]+[.]/g, '').slice(3).split(' ');
+    fullAns = game.replace(/ [0-9]+[.]/g, '').slice(3).split(' ');
 
 }
+
 function sendResult(isWin) {
     let xhttp = new XMLHttpRequest();
     let body = JSON.stringify({
@@ -492,7 +497,9 @@ function sendResult(isWin) {
             avgTries = res.avg_tries;
             $('#share-modal-stats').html(`
                 <br />
-                This was from [] - [] () game
+                Today, ${percentCorrect}% of people got ${DIFFICULTY_NAME_MAP[difficulty]} mode correct.
+                <br />
+                Of the people who got it correct, it took ${avgTries} tries on average.
                 <br />`);
         }
     };
@@ -596,8 +603,7 @@ function setUp() {
         openMaintenanceModal();
         return;
     }
-    let today = '2022-03-20'
-    if (today !== localStorage.getItem('date')) {
+    if (TODAY !== localStorage.getItem('date')) {
         localStorage.setItem('prevGuesses', '[]');
         localStorage.setItem('prevResults', '[]');
         localStorage.setItem('isGameOver', false);
