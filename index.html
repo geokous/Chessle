@@ -11,40 +11,58 @@
     <script src="https://kit.fontawesome.com/0f36d9bd6a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/chessboard-1.0.0.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/chessle.css">
+    <link rel="stylesheet" href="css/chessle.css?v=1.2">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZZXXY1FWK2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZZXXY1FWK2');
+    </script>
     <title>Chessle</title>
     <link rel="icon" type="image/png" href="img/favicon.ico"/>
   </head>
   <body>
     <nav class="navbar navbar-dark navbar-header">
-      <a class="navbar-brand navbar-side" href="https://jackli.gg">
-        jackli.gg
-        <span onclick="location.href='https://www.youtube.com/channel/UC5Mb9-W4AL_2BX0MIn6GeNA'; return false;">
-          <i class="fab fa-youtube"></i>
-        </span>
+      <a class="navbar-brand navbar-side" href="geokous.github.io" target="_blank">
+        geokous.github.io
+        <img src="img/Chessle.png" style="display:none">
       </a>
-      <a class="navbar navbar-title">Chessle</a>
+      <div class="navbar navbar-title flex flex-column">
+        <div class="navbar-main-title">Chessle</div>
+        <div class="navbar-title-sponsor">Sponsored by Georgios :)  </div>
+      </div>
       <a class="navbar-side"></a>
     </nav>
     <div class="container">
       <div class="modal fade" id="instructionsModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" id="instructionsModalInner" role="document">
           <div class="modal-content">
-            <div class="modal-header instructions-header">
+            <div class="modal-header header-p0">
               <h5 class="modal-title" id="instructionsModalTitle"></h5>
             </div>
             <div class="modal-body row justify-content-center modal-instructions">
-              <p id="instructionsModalBody" class="instructions-text"></p>
+              <p id="instructionsModalBody"></p>
             </div>
             <div class="row justify-content-center">
-              <button type="button" class="btn btn-primary btn-lg mode-button" onclick="chooseNormalMode()">
-                msod Mode<br />
+              <button type="button" class="btn btn-primary btn-lg mode-button" onclick="chooseMode('n')">
+                Expert XL mode<br />
                 <p class="mode-desc">(Guess 10 moves for each colour)</p>
               </button>
-              <button type="button" class="btn btn-primary btn-lg mode-button" onclick="chooseExpertMode()">
-                Still msod Mode<br />
-                <p class="mode-desc">(Same)</p>
-              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="maintenanceModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header header-p0">
+              <h5 class="modal-title">Maintenance</h5>
+            </div>
+            <div class="modal-body row justify-content-center modal-instructions">
+              <p>Chessle is currently under maintenance. Please check <a href="https://twitter.com/jackli_gg" target="_blank">Twitter</a> 🙂</p>
             </div>
           </div>
         </div>
@@ -55,6 +73,7 @@
       <div class="row justify-content-center align-self-center row-buttons">
         <button type="button" class="btn btn-danger row-button" id="undoButton" onclick='undo()'>Undo Move</button>
         <button type="button" class="btn btn-info row-button" id="flipButton" onclick='flip()'>Flip Board</button>
+        <button type="button" class="btn btn-success row-button" id="fillButton" onclick='fillPrevCorrect()'>Fill Previously Correct Guesses</button>
       </div>
       <div id="prevGuesses"></div>
       <div class="row justify-content-center align-self-center" id="currentGuess"></div>
@@ -64,7 +83,7 @@
         <button class="btn btn-primary row-button" onclick="submitGuess()">Submit</button>
       </div>
       <div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" id="shareModalInner" role="document">
+        <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="shareModalTitle"></h5>
@@ -78,11 +97,14 @@
             <div class="modal-footer">
               <div id="alertArea"></div>
               <button type="button" class="btn btn-success btn-lg" onclick="createSharePasta()">Share</button>
+              <a id="chessableLearnMoreButton" target="_blank">
+                <button type="button" class="btn btn-primary btn-lg">Learn More</button>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </body>
-  <script src="js/chessle.js"></script>
+  <script src="js/chessle.js?v=1.1"></script>
 </html>
