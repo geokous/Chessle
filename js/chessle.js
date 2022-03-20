@@ -449,7 +449,8 @@ function openShareModal(text) {
         ${difficulty === 'e' ? ans_name_expert : ans_name_normal}
         <br />
         <br />
-        This was from Grischuk - Caruana (https://lichess.org/U4LSY9eX#20)
+        This was from Karjakin - Petrosian (https://lichess.org/OdzQZ8xG)
+
         <br />
         <br />
         I reset this manually when I have time :)
@@ -602,7 +603,7 @@ function setUp() {
         openMaintenanceModal();
         return;
     }
-    if (date !== localStorage.getItem('date')) {
+    if (TODAY !== localStorage.getItem('date')) {
         localStorage.setItem('prevGuesses', '[]');
         localStorage.setItem('prevResults', '[]');
         localStorage.setItem('isGameOver', false);
