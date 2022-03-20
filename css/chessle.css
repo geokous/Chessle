@@ -19,7 +19,12 @@
 .row-button {
     margin-left: 5px;
     margin-right: 5px;
+    margin-bottom: 5px;
     width: 150px;
+}
+
+#fillButton {
+    width: 250px;
 }
 
 .modal-body {
@@ -68,13 +73,13 @@
     color: white;
 }
 
+.header-p0 {
+    padding-bottom: 0px;
+}
+
 .modal-instructions {
     font-size: 1rem;
     margin-left: 5px;
-}
-
-.instructions-header {
-    padding-bottom: 0px;
 }
 
 .instructions-example {
@@ -122,8 +127,29 @@
     font-weight: bold;
 }
 
+@media(min-width: 512px) {
+    .navbar-title {
+        padding-right: 40px;
+    }
+}
+
+.navbar-main-title {
+    width: 100%;
+    text-align: center;
+}
+
 .navbar-side {
     width: 100px;
+}
+
+.navbar-title-sponsor {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.navbar-title-sponsor img {
+    height: 1.5rem;
+    margin-top: -0.25rem;
 }
 
 .lock-screen {
