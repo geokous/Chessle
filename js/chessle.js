@@ -102,10 +102,10 @@ function submitGuess() {
         guess.push(document.getElementById('guess-' + i).innerHTML);
     }
     // Error if not all the boxes are filled up
-    if (guess.includes('')) {
-        createAlert('errorBox', 'errorArea', 'Fill up all the moves first!', 'danger');
-        return;
-    }
+    // if (guess.includes('')) {
+    //     createAlert('errorBox', 'errorArea', 'Fill up all the moves first!', 'danger');
+    //     return;
+    // }
 
     // Check guess
     let result = check(guess, ans);
