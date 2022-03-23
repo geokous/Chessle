@@ -3,7 +3,7 @@ const SERVER_URL = 'www.google.com';
 
 const MAX_GUESSES = 10;
 const CURR_LENGTH = 20;
-const TODAY = '2022-03-20';
+const TODAY = '2022-03-23';
 
 const LIGHT_BOX = 'bg-dark';
 const BLACK_BOX = 'text-white bg-secondary';
@@ -232,12 +232,12 @@ function createSharePasta() {
     let pasta = 'Chessle '
         + chessleNum
         + ' ('
-        + DIFFICULTY_NAME_MAP[difficulty]
+        + Expert XL
         + ') '
         + tries
         + '/' + MAX_GUESSES + '\n\n'
         + createEmojiPattern('\n') + '\n'
-        + 'https://jackli.gg/chessle';
+        + 'geokous.github.io';
     let shareData = {
         text: pasta
     };
@@ -446,7 +446,7 @@ function openShareModal(text) {
         <br />
         ${createPgnFromMoveList(ans)}
         <br />
-        ${difficulty === 'e' ? ans_name_expert : ans_name_normal}
+        Expert XL
         <br />
         <br />
         This was from Karjakin - Petrosian (https://lichess.org/OdzQZ8xG)
@@ -468,8 +468,8 @@ function openShareModal(text) {
 // HTTP requests
 
 function getAnswer() {
-    let game = '1. e4 d6 2. d4 Nf6 3. Nc3 c6 4. f4 Qa5 5. Bd3 e5 6. Nf3 Bg4 7. Be3 Nbd7 8. O-O Be7 9. h3 Bxf3 10. Qxf3 O-O'
-    let hardcoded_ans = '{"date": "2022-02-22", "num": 6, "name": "Pirc Defense: Czech Defense"}'
+    let game = '1. Nf3 Nf6 2. g3 g6 3. Bg2 Bg7 4. O-O O-O 5. d3 d5 6. Nbd2 c5 7. e4 Nc6 8. Re1 e5 9. exd5 Nxd5 10. Nc4 Re8'
+    let hardcoded_ans = '{"date": "2022-02-22", "num": 6, "name": "King\'s Indian Attack: Wahls Defense"}'
     let res = JSON.parse(hardcoded_ans);
     date = TODAY;
     chessleNum = res.num;
