@@ -231,9 +231,7 @@ function createSharePasta() {
 
     let pasta = 'Chessle '
         + chessleNum
-        + ' ('
-        + Expert XL
-        + ') '
+        + ' (Expert XL) '
         + tries
         + '/' + MAX_GUESSES + '\n\n'
         + createEmojiPattern('\n') + '\n'
