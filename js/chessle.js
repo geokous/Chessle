@@ -447,11 +447,10 @@ function openShareModal(text) {
         Expert XL
         <br />
         <br />
-        This was from Karjakin - Petrosian (https://lichess.org/OdzQZ8xG)
+        This was from Aronian - Nakamura (https://lichess.org/VAlYv84F)
 
         <br />
         <br />
-        I reset this manually when I have time :)
         </p>
     `;
     $('#shareModalBody').html(modalBody);
@@ -466,8 +465,8 @@ function openShareModal(text) {
 // HTTP requests
 
 function getAnswer() {
-    let game = '1. Nf3 Nf6 2. g3 g6 3. Bg2 Bg7 4. O-O O-O 5. d3 d5 6. Nbd2 c5 7. e4 Nc6 8. Re1 e5 9. exd5 Nxd5 10. Nc4 Re8'
-    let hardcoded_ans = '{"date": "2022-02-22", "num": 6, "name": "King\'s Indian Attack: Wahls Defense"}'
+    let game = '1. d4 f5 2. g3 Nf6 3. Bg2 g6 4. Nf3 Bg7 5. O-O O-O 6. c4 d6 7. Nc3 c6 8. Qb3 Kh8 9. Rd1 Na6 10. Qa3 Nc7'
+    let hardcoded_ans = '{"date": "2022-04-06", "num": 6, "name": "Dutch Defense: Leningrad Variation, Warsaw Variation"}'
     let res = JSON.parse(hardcoded_ans);
     date = TODAY;
     chessleNum = res.num;
