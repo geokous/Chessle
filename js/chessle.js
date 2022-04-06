@@ -464,7 +464,7 @@ function openShareModal(text) {
 
 function getAnswer() {
     let game = '1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Be3 e5 7. Nb3 Be6 8. f3 Be7 9. Qd2 O-O 10. O-O-O Nbd7'
-    let hardcoded_ans = '{"date": "2022-04-06", "num": 6, "name": "Dutch Defense: Leningrad Variation, Warsaw Variation"}'
+    let hardcoded_ans = '{"date": "2022-04-07", "num": 6, "name": "Dutch Defense: Leningrad Variation, Warsaw Variation"}'
     let res = JSON.parse(hardcoded_ans);
     date = TODAY;
     chessleNum = res.num;
