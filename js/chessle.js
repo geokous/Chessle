@@ -444,10 +444,11 @@ function openShareModal(text) {
         <br />
         ${createPgnFromMoveList(ans)}
         <br />
-        Expert XL
+        <br />
+        The opening was "Dutch Defense: Leningrad Variation, Warsaw Variation"
         <br />
         <br />
-        This was from Aronian - Nakamura (https://lichess.org/VAlYv84F)
+        This was from Aronian - Nakamura, Tata Steel (<a href="https://lichess.org/VAlYv84F">2012-01-15</a>)
 
         <br />
         <br />
