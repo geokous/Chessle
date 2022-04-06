@@ -307,13 +307,13 @@ function createLabelHtml(idx, guessBoxSize) {
 function createGuessBoxFontCss(text, guessBoxSize) {
     let textLength = Math.max(Math.min(text.length, 7), 3);
     return `
-        font-size: ${GUESS_BOX_SIZE_TO_FONT_SIZE[guessBoxSize][textLength]};
-        font-weight: ${GUESS_BOX_SIZE_TO_FONT_WEIGHT[guessBoxSize]};
+        font-size: ${GUESS_BOX_SIZE_TO_FONT_SIZE['small'][textLength]};
+        font-weight: ${GUESS_BOX_SIZE_TO_FONT_WEIGHT['small']};
     `;
 }
 
 function createBox(guessBoxSize, str, style, fontCss, id) {
-    let widthHeight = GUESS_BOX_SIZE_WIDTH_HEIGHT[guessBoxSize];
+    let widthHeight = GUESS_BOX_SIZE_WIDTH_HEIGHT['small'];
     id = id !== undefined ? 'id="' + id + '"' : '';
     return `
         <div>
@@ -445,20 +445,17 @@ function openShareModal(text) {
         ${createPgnFromMoveList(ans)}
         <br />
         <br />
-        The opening was "Dutch Defense: Leningrad Variation, Warsaw Variation"
+        The opening was "Sicilian Defense: Najdorf Variation, English Attack"
         <br />
         <br />
-        This was from Aronian - Nakamura, Tata Steel (<a href="https://lichess.org/VAlYv84F">2012-01-15</a>)
+
 
         <br />
         <br />
         </p>
     `;
     $('#shareModalBody').html(modalBody);
-    $('#chessableLearnMoreButton').attr('href', chessableLink);
-    $('#chessableLearnMoreButton').click(function() {
-        logOutboundClick(chessableLink);
-    });
+
     $('#shareModal').modal('show');
 }
 
@@ -466,7 +463,7 @@ function openShareModal(text) {
 // HTTP requests
 
 function getAnswer() {
-    let game = '1. d4 f5 2. g3 Nf6 3. Bg2 g6 4. Nf3 Bg7 5. O-O O-O 6. c4 d6 7. Nc3 c6 8. Qb3 Kh8 9. Rd1 Na6 10. Qa3 Nc7'
+    let game = '1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Be3 e5 7. Nb3 Be6 8. f3 Be7 9. Qd2 O-O 10. O-O-O Nbd7'
     let hardcoded_ans = '{"date": "2022-04-06", "num": 6, "name": "Dutch Defense: Leningrad Variation, Warsaw Variation"}'
     let res = JSON.parse(hardcoded_ans);
     date = TODAY;
